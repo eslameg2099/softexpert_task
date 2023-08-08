@@ -15,11 +15,9 @@ class CreateAttributeValuesTable extends Migration
     {
         Schema::create('attribute_values', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('entity_id');
-            $table->foreign('entity_id')->references('id')->on('entities')->cascadeOnDelete();
-            $table->foreignId('Objectentity');
-            $table->foreign('objectentity_id')->references('id')->on('objectentities')->cascadeOnDelete();
             $table->foreignId('objectentity_id');
+            $table->foreign('objectentity_id')->references('id')->on('objectentities')->cascadeOnDelete();
+            $table->foreignId('attribute_id');
             $table->foreign('attribute_id')->references('id')->on('attributes')->cascadeOnDelete();
             $table->string('value');
             $table->timestamps();

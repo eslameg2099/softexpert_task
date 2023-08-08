@@ -10,15 +10,14 @@ class AttributeValue extends Model
     use HasFactory;
     
     protected $fillable = [
-        'entity_id',
         'attribute_id',
         'objectentity_id',
         'value',
     ];
 
-    public function entity()
+    public function objectentity()
     {
-        return $this->belongsTo(Entity::class,'entity_id');
+        return $this->belongsTo(Objectentity::class,'objectentity_id');
     }
 
     public function attribute()

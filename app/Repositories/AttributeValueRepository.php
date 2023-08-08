@@ -30,7 +30,6 @@ class AttributeValueRepository
         $attributeValue =  AttributeValue::create([
                 'attribute_id' => $attributeId,
                 'value' => $validatedData['values'][$index],
-                'entity_id' => $entity_id,
                 'objectentity_id'=>$objectentity->id,
             ]);
         }

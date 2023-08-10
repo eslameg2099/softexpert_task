@@ -25,8 +25,8 @@ class AttributeValueRepository
     public function create($validatedData,$entity_id)
     {
         $objectentity =  Objectentity::create(['entity_id'=>$entity_id]);
+        
         foreach ($validatedData['attribute_ids'] as $index => $attributeId) {
-
         $attributeValue =  AttributeValue::create([
                 'attribute_id' => $attributeId,
                 'value' => $validatedData['values'][$index],
